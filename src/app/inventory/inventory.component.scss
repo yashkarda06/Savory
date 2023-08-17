@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #212121;
+}
+
+label {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 1.2em;
+  color: #212121;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"] {
+  border: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.12);
+}
+
+input[type="submit"],
+button {
+  border: none;
+  background-color: #2196F3;
+  color: #fff;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #1976D2;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+th {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+td img {
+  max-width: 100%;
+  height: auto;
+}
+
+form {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+.add-item {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.add-item button {
+  background-color: #4CAF50;
+}
+
+.add-item button:hover {
+  background-color: #388E3C;
+}

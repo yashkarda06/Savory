@@ -1,0 +1,54 @@
+<div>
+  <h2>Inventory</h2>
+  <label>Search:</label>
+  <input type="text" [(ngModel)]="searchTerm" name="searchTerm"><button (click)="filterItems()">Search</button>
+  
+  <br>
+  <table *ngIf="!showForm">
+    <thead>
+      <tr>
+        <!-- <th>Photo</th> -->
+        <th>Name</th>
+        <th>Expiry Date</th>
+        <th>Quantity</th>
+        <!-- <th>Price</th> -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredItems">
+        <!-- <td><img [src]="item.photo" alt="{{ item.name }}" width="50" height="50"></td> -->
+        <td>{{ item.name }}</td>
+        <td>{{ item.expiry }}</td>
+        <td>{{ item.quantity }}</td>
+        <!-- <td>{{ item.price }}</td> -->
+        <td>
+          <button (click)="editItem(item)">Edit</button>
+          <button (click)="deleteItem(item)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form *ngIf="showForm">
+    <label>Food Name:</label>
+    <input type="text" [(ngModel)]="newFoodItem.name" name="name">
+    <br>
+    <label>Expiry Date:</label>
+    <input type="date" [(ngModel)]="newFoodItem.expiry" name="expiry">
+    <br>
+    <label>Quantity:</label>
+    <input type="text" [(ngModel)]="newFoodItem.quantity" name="quantity">
+    <br>
+    <!-- <label>Price:</label>
+    <input type="text" [(ngModel)]="newFoodItem.price" name="price">
+    <br>
+    <label>Photo:</label>
+    <input type="file" (change)="onFileSelected($event)" name="photo">
+    <br> -->
+    <button (click)="addItem()">Add Item</button>
+  </form>
+
+  <button *ngIf="!showForm" (click)="showForm = true">Add Item</button>
+  <br>
+</div>

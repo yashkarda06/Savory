@@ -1,0 +1,50 @@
+<h1>Waste Tracking</h1>
+
+<button (click)="showForm = true">Add Item</button>
+
+<div *ngIf="showForm">
+  <form (ngSubmit)="addItem()">
+    <label>
+      Food Name:
+      <input type="text" [(ngModel)]="newItem.name" name="name" required>
+    </label>
+
+    <label>
+      Quantity Wasted:
+      <input type="text" [(ngModel)]="newItem.quantity" name="quantity" required>
+    </label>
+
+    <label>
+      Date:
+      <input type="date" [(ngModel)]="newItem.Date" name="Date" required>
+    </label>
+
+    <label>
+      Reason:
+      <input type="text" [(ngModel)]="newItem.Reason" name="Reason" required>
+    </label>
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Quantity Wasted</th>
+      <th>Date</th>
+      <th>Reason</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.Date }}</td>
+      <td>{{ item.Reason }}</td>
+      <button (click)="deleteItem(item)">Delete</button>    </tr>
+  </tbody>
+</table>
+<button (click)="SendReport()">Generate Report</button>
